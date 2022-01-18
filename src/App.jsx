@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import Drumpad from './components/Drumpad/index'
 
 function App() {
   const [data, setData] = useState([
@@ -54,10 +55,11 @@ function App() {
   const [display, setDisplay] = useState('');
   return (
     <div className="container">
+      <h1>Drum Machine</h1>
       <div id="drum-machine">
         <div id="drum-pads">
           {data.map((drum) => (
-            <div className="drum-pad">{drum.key}</div>
+            <Drumpad drumkey={drum.key}></Drumpad>
           ))}
         </div>
         <div className="display-div">

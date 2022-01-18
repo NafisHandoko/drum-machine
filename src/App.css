@@ -30,23 +30,13 @@ body{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 0px 0px;
+  /* gap: 0px 0px; */
+  gap: 25px;
   grid-auto-flow: row;
   grid-template-areas:
     ". . ."
     ". . ."
     ". . .";
-}
-
-.drum-pad{
-  border-radius: 50px;
-  background: linear-gradient(145deg, #8c1ec8, #a723ee);
-  box-shadow:  20px 20px 40px #851cbd,-20px -20px 40px #b326ff;
-  /* border: 2px solid blue; */
-  font-weight: 700;
-  font-size: 24px;
-  padding: 40px;
-  text-align: center;
 }
 
 .display-div{

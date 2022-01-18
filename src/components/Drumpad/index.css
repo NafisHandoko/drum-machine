@@ -1,0 +1,10 @@
+.drum-pad{
+    border-radius: 50px;
+    background: linear-gradient(145deg, #8c1ec8, #a723ee);
+    box-shadow:  20px 20px 40px #851cbd,-20px -20px 40px #b326ff;
+    /* border: 2px solid blue; */
+    font-weight: 700;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+  }
