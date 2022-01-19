@@ -65,7 +65,11 @@ function App() {
 
   function eventHandler(e){
     const audioElem = document.querySelector('.clip#'+e.target.innerText)
-    audioElem.play()
+    var isPlaying = audioElem.currentTime > 0 && !audioElem.paused && !audioElem.ended 
+    && audioElem.readyState > audioElem.HAVE_CURRENT_DATA;
+    if (!isPlaying) {
+      audioElem.play();
+    }
     setDisplay(audioElem.parentNode.id)
   }
 
