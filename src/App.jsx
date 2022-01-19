@@ -3,6 +3,11 @@ import logo from './logo.svg'
 import './App.css'
 import Drumpad from './components/Drumpad/index'
 
+function eventHandler(e){
+  console.log(e.target.innerHTML)
+  
+}
+
 function App() {
   const [data, setData] = useState([
     {
@@ -59,7 +64,7 @@ function App() {
       <div id="drum-machine">
         <div id="drum-pads">
           {data.map((drum) => (
-            <Drumpad drumkey={drum.key}></Drumpad>
+            <Drumpad key={drum.key} drumkey={drum.key} audioLink={drum.audioLink} audioName={drum.audioName} eventHandler={eventHandler}></Drumpad>
           ))}
         </div>
         <div className="display-div">
