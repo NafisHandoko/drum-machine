@@ -1,12 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Drumpad from './components/Drumpad/index'
 
 function eventHandler(e){
-  const elem = document.querySelector('.clip#'+e.target.innerText)
-  console.log(elem)
-  elem.play()
+  const audioElem = document.querySelector('.clip#'+e.target.innerText)
+  // try {
+  //   audioElem = document.querySelector('.clip#'+e.key.toUpperCase())
+  // } catch (error) {
+  //   audioElem = document.querySelector('.clip#'+e.target.innerText)
+  // }
+  audioElem.play()
+  // audioElem.parentNode.click()
+}
+
+function keydownHandler(e){
+  const audioElem = document.querySelector('.clip#'+e.key.toUpperCase())
+  audioElem.parentNode.click()
+  audioElem.parentNode.classList.toggle('active')
+}
+
+function keyupHandler(e){
+  const audioElem = document.querySelector('.clip#'+e.key.toUpperCase())
+  audioElem.parentNode.classList.toggle('active')
 }
 
 function App() {
@@ -59,6 +75,10 @@ function App() {
   ]);
 
   const [display, setDisplay] = useState('');
+  useEffect(() => {
+    document.addEventListener('keydown', keydownHandler)
+    document.addEventListener('keyup', keyupHandler)
+  })
   return (
     <div className="container">
       <h1>Drum Machine</h1>
