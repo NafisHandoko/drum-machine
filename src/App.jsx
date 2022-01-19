@@ -4,56 +4,57 @@ import './App.css'
 import Drumpad from './components/Drumpad/index'
 
 function eventHandler(e){
-  console.log(e.target.innerHTML)
-  
+  const elem = document.querySelector('.clip#'+e.target.innerText)
+  console.log(elem)
+  elem.play()
 }
 
 function App() {
   const [data, setData] = useState([
     {
       key: 'Q',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Heater-1',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
     },
     {
       key: 'W',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Heater-2',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
     },
     {
       key: 'E',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Heater-3',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
     },
     {
       key: 'A',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Heater-4',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
     },
     {
       key: 'S',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Heater-6',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
     },
     {
       key: 'D',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Open-HH',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
     },
     {
       key: 'Z',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: "Kick-n'-Hat",
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
     },
     {
       key: 'X',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Kick',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
     },
     {
       key: 'C',
-      audioName: 'lorem',
-      audioLink: 'lorem'
+      audioName: 'Closed-HH',
+      audioLink: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
     }
   ]);
 
