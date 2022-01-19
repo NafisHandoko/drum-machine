@@ -11,6 +11,9 @@
     color: white;
   }
 
-  .drum-pad:active, .drum-pad.active{
-    color: black;
-  }
+.drum-pad:active, .drum-pad.active{
+  border-radius: 50px;
+  background: #9c21de;
+  box-shadow: inset 20px 20px 60px #851cbd,
+              inset -20px -20px 60px #b326ff;
+}

@@ -3,17 +3,6 @@ import logo from './logo.svg'
 import './App.css'
 import Drumpad from './components/Drumpad/index'
 
-function eventHandler(e){
-  const audioElem = document.querySelector('.clip#'+e.target.innerText)
-  // try {
-  //   audioElem = document.querySelector('.clip#'+e.key.toUpperCase())
-  // } catch (error) {
-  //   audioElem = document.querySelector('.clip#'+e.target.innerText)
-  // }
-  audioElem.play()
-  // audioElem.parentNode.click()
-}
-
 function keydownHandler(e){
   const audioElem = document.querySelector('.clip#'+e.key.toUpperCase())
   audioElem.parentNode.click()
@@ -74,7 +63,13 @@ function App() {
     }
   ]);
 
-  const [display, setDisplay] = useState('');
+  function eventHandler(e){
+    const audioElem = document.querySelector('.clip#'+e.target.innerText)
+    audioElem.play()
+    setDisplay(audioElem.parentNode.id)
+  }
+
+  const [display, setDisplay] = useState('display here');
   useEffect(() => {
     document.addEventListener('keydown', keydownHandler)
     document.addEventListener('keyup', keyupHandler)
@@ -89,7 +84,7 @@ function App() {
           ))}
         </div>
         <div className="display-div">
-          <div id="display">text here</div>
+          <div id="display">{display}</div>
         </div>
       </div>
     </div>
