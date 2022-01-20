@@ -77,6 +77,7 @@ function App() {
   useEffect(() => {
     document.addEventListener('keydown', keydownHandler)
     document.addEventListener('keyup', keyupHandler)
+    document.getElementById('drum-machine').style.padding = '40px'
   })
   return (
     <div className="container">
@@ -91,6 +92,7 @@ function App() {
           <div id="display">{display}</div>
         </div>
       </div>
+      <footer>By Nafis Handoko</footer>
     </div>
   )
 }
