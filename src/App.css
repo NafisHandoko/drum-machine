@@ -76,3 +76,19 @@ header{
 footer{
   padding-top: 20px;
 }
+
+@media (max-width: 768px){
+  #drum-machine{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .display-div{
+    margin-left: 0;
+    flex-direction: row-reverse;
+    margin-bottom: 25px;
+  }
+  .repo{
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+}
