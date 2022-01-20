@@ -81,7 +81,9 @@ function App() {
   })
   return (
     <div className="container">
-      <h1>Drum Machine</h1>
+      <header>
+        <h1>Drum Machine</h1>
+      </header>
       <div id="drum-machine">
         <div id="drum-pads">
           {data.map((drum) => (
@@ -89,10 +91,11 @@ function App() {
           ))}
         </div>
         <div className="display-div">
+          <a href="https://github.com/NafisHandoko/drum-machine" className="repo" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
           <div id="display">{display}</div>
         </div>
       </div>
-      <footer>By Nafis Handoko</footer>
+      <footer>By <a href="http://github.com/nafishandoko" target="_blank" rel="noopener noreferrer">Nafis Handoko</a></footer>
     </div>
   )
 }
