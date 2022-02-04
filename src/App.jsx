@@ -65,11 +65,14 @@ function App() {
 
   function eventHandler(e){
     const audioElem = document.querySelector('.clip#'+e.target.innerText)
+    
+    // I got this solution code snippet from here https://stackoverflow.com/questions/36803176/how-to-prevent-the-play-request-was-interrupted-by-a-call-to-pause-error
     var isPlaying = audioElem.currentTime > 0 && !audioElem.paused && !audioElem.ended 
     && audioElem.readyState > audioElem.HAVE_CURRENT_DATA;
     if (!isPlaying) {
       audioElem.play();
     }
+    
     setDisplay(audioElem.parentNode.id)
   }
 
